@@ -2,7 +2,7 @@ import Post from "../models/post";
 
 export const getPosts = async (req, res) => {
   try {
-    const posts = await Post.find().populate("userId");
+    const posts = await Post.find().populate("userId", "username");
     res.status(200).json(posts);
   } catch (error) {
     console.log(error);
@@ -35,7 +35,7 @@ export const createPost = async (req, res) => {
 export const getPostById = async (req, res) => {
   try {
     const postId = req.params.id;
-    const post = await Post.findById(postId).populate("userId");
+    const post = await Post.findById(postId).populate("userId", "username");
     res.status(200).json(post);
   } catch (error) {
     console.log(error);

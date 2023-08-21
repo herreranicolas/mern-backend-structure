@@ -2,7 +2,6 @@ import { check } from "express-validator";
 import validationRes from "./validationResult";
 
 const validateUser = [
-  check("username").notEmpty().withMessage("Username is required"),
   check("email")
     .isEmail()
     .withMessage("Invalid email address")
