@@ -58,10 +58,6 @@ Make sure to configure your environment variables by creating a .env file in the
 
 The project utilizes the following key dependencies:
 
-## Dependencies
-
-The project utilizes the following key dependencies:
-
 - **babel-cli**: Babel command line interface for transpiling ES6+ code.
 - **babel-preset-env**: Babel preset for compiling ES6+ syntax and modern JavaScript features.
 - **cors**: Express middleware for enabling Cross-Origin Resource Sharing (CORS) support.

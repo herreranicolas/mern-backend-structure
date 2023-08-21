@@ -4,6 +4,8 @@ import morgan from "morgan";
 import path from "path";
 import "dotenv/config";
 import "./src/database/dbConnection";
+import usersRouter from "./src/routes/users.routes";
+import postsRouter from "./src/routes/posts.routes";
 
 const app = express();
 
@@ -19,3 +21,8 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
 app.use(express.static(path.join(__dirname, "/public")));
+
+// Routes
+
+app.use("/api-backend", usersRouter);
+app.use("/api-backend", postsRouter);
