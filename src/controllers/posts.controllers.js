@@ -31,3 +31,46 @@ export const createPost = async (req, res) => {
     });
   }
 };
+
+export const getPostById = async (req, res) => {
+  try {
+    const postId = req.params.id;
+    const post = await Post.findById(postId).populate("userId");
+    res.status(200).json(post);
+  } catch (error) {
+    console.log(error);
+    res.status(404).json({
+      message: "Post not found.",
+    });
+  }
+};
+
+export const updatePost = async (req, res) => {
+  try {
+    const postId = req.params.id;
+    await Post.findByIdAndUpdate(postId, req.body);
+    res.status(200).json({
+      message: "Post updated succesfully.",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({
+      message: "Failed to update post.",
+    });
+  }
+};
+
+export const deletePost = async (req, res) => {
+  try {
+    const postId = req.params.id;
+    await Post.findByIdAndDelete(postId);
+    res.status(200).json({
+      message: "Post deleted successfully.",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(404).json({
+      message: "Failed to delete post.",
+    });
+  }
+};
