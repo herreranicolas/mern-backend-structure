@@ -1,4 +1,5 @@
 import generateJWT from "../helpers/token-sign";
+import Post from "../models/post";
 import User from "../models/user";
 import bcrypt from "bcrypt";
 
@@ -69,6 +70,12 @@ export const deleteUser = async (req, res) => {
   try {
     const userId = req.params.id;
     await User.findByIdAndDelete(userId);
+    const associatedPosts = await Post.find({ userId: req.params.id });
+    if (associatedPosts.length > 0) {
+      associatedPosts.map(
+        async (post) => await Post.findByIdAndDelete(post._id)
+      );
+    }
     res.status(200).json({
       message: "User deleted successfully.",
     });
