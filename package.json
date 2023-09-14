@@ -1,16 +1,28 @@
 {
-  "name": "mern-backend-structure",
+  "name": "mern-backend-builder",
   "version": "1.0.0",
-  "description": "Initial Backend Structure",
+  "description": "Mern Backend Builder",
   "main": "index.js",
+  "files": [
+    "public/**/*",
+    "src/controllers/**/*.js",
+    "src/database/**/*.js",
+    "src/helpers/**/*.js",
+    "src/models/**/*.js",
+    "src/routes/**/*.js",
+    ".babelrc",
+    "config.js",
+    "index.js",
+    "README.md"
+  ],
   "scripts": {
     "start": "babel-node index.js",
     "dev": "nodemon --exec babel-node index.js"
   },
   "keywords": [
-    "initial",
+    "mern",
     "backend",
-    "structure"
+    "builder"
   ],
   "author": "Nicolas Herrera",
   "license": "ISC",
