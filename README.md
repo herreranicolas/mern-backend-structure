@@ -75,4 +75,4 @@ This project was authored by Nicolas Herrera.
 
 ## Contact
 
-If you have any suggestions, questions, or need assistance, feel free to contact me at [herreranicoo17@gmail.com](mailto:herreranicoo17@gmail.com). Your feedback is greatly appreciated!
+If you have any suggestions, questions, or need assistance, feel free to contact me. Your feedback is greatly appreciated!
